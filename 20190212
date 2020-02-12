@@ -1,34 +1,51 @@
-DDL : Data Definition Language
-CREATE -> DATABASE,TABLE, INDEX, VIEW
+=========================
+PERTAMA
+=========================
 
-====CARA BUKA MYSQL DI TERMINAL====
+ENUM, sangat penting jika suatu field isinya sudah pasti, seperti jenis kelamin kan sudah pasti L/P sehingga akan baik jika ENUM('L','P')
+
+**DDL : Data Definition Language**
+Berurusan dengan struktur
+--- CREATE(DATABASE, TABLE, INDEX, VIEW), ALTER(DATABASE, TABLE)---
+CREATE DATABASE mahasiswa;
+CREATE TABLE data_mahasiswa ( nim char(9), nama char(50), 
+umur int, tempat_lahir char(50), jurusan char (30) );
+- ALTER TABLE daftar_jurusan MODIFY jumlah_mahasiswa MEDIUMINT;
+- ALTER TABLE daftar_jurusan CHANGE alamat alamat_jurusan VARCHAR(100);
+- ALTER TABLE daftar_jurusan RENAME TO tabel_jurusan;
+- RENAME TABLE tabel_jurusan TO daftar_jurusan;
+- ALTER TABLE daftar_jurusan ADD ketua_jurusan VARCHAR(50);
+- ALTER TABLE daftar_jurusan DROP ketua_jurusan;
+
+**DML : Data Manipulation Language**
+Berurusan dengan data
+--- INSERT, UPDATE, DELETE, SELECT -----
+INSERT INTO PRODI VALUES('TI','INFORMATIKA','S1','A');
+SELECT * FROM data_mahasiswa;
+UPDATE PRODI SET AKREDITASI='B'
+DELETE FROM data_mahasiswa WHERE kode_mahasiswa = 4
+
+*Referensi bahasa indo di`DuniaIlkom
+<https://www.duniailkom.com/tutorial-mysql-menambahkan-data-ke-dalam-tabel-inser/>`_.*
+
+---------------------------------
+
+CARA BUKA MYSQL DI TERMINAL
+---------------------
 aktifkan xampp apache dan mysql, buka terminal, Ketik pada terminal > cd /opt/lampp/bin,  Ketik pada terminal > ./mysql -u root -p, ENTER aja, karena ngga ada password.
-===================================
 
------------------------------------
 Coding : menerjemahkan perintah program ke bahasa yg dapat dipahami oleh komputer
 Syntax : pola-pola aturan/struktur yg mengatur penggunaan kata dan simbol untuk memberi perintah atau menulis kode program, dalam software aplikasi atau bahasa pemrograman tertentu
 Query : instruksi dan prosedur yang digunakan untuk mengambil data dari database
+
+Field(column) adalah kumpulan dari karakter yang membentuk satu arti, maka jika terdapat field misalnya seperti NomerBarang atau NamaBarang.
+Record(row) adalah kumpulan field yang sangat lengkap, dan biasanya dihitung dalam satuan baris. 
+Tabel adalah kumpulan dari beberapa record dan juga field. 
+File adalah terdiri dari record-record yang menggambarkan dari satu kesatuan data yang sejenis. Misalnya seperti file nama barang berisikan data tentang semua nama barang yang ada. 
+Data adalah kumpulan fakta atau kejadian yang digunakan sebagai penyelesaian masalah dalam bentuk informasi. 
+Pengertian basis data (database) adalah basis data yang terdiri dari dua kata, yaitu kata basis dan data. Basis dapat di artikan markas ataupun gudang, maupun tempat berkumpul.
+
 -------------------------------------
 
-CREATE DATABASE mahasiswa;
-SHOW DATABASES;
-USE mahasiswa;
-DROP DATABASE mahasiswa;
 
-CREATE TABLE data_mahasiswa ( nim char(9), nama char(50), 
-umur int, tempat_lahir char(50), jurusan char (30) );
-SHOW TABLES;
-DROP TABLE data_mahasiswa;
-
-ALTER TABLE daftar_jurusan MODIFY jumlah_mahasiswa MEDIUMINT;
-ALTER TABLE daftar_jurusan CHANGE alamat alamat_jurusan VARCHAR(100);
-ALTER TABLE daftar_jurusan RENAME TO tabel_jurusan;
-RENAME TABLE tabel_jurusan TO daftar_jurusan;
-ALTER TABLE daftar_jurusan ADD ketua_jurusan VARCHAR(50);
-ALTER TABLE daftar_jurusan DROP ketua_jurusan;
-SHOW TABLE STATUS WHERE NAME='daftar_jurusan' \G;
-SHOW TABLE STATUS WHERE NAME='daftar_jurusan' \G;
-
-INSERT INTO mata_kuliah VALUES ('KIMDA','Kimia Dasar',2,' Kimia');
 
