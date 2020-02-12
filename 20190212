@@ -1,0 +1,34 @@
+DDL : Data Definition Language
+CREATE -> DATABASE,TABLE, INDEX, VIEW
+
+====CARA BUKA MYSQL DI TERMINAL====
+aktifkan xampp apache dan mysql, buka terminal, Ketik pada terminal > cd /opt/lampp/bin,  Ketik pada terminal > ./mysql -u root -p, ENTER aja, karena ngga ada password.
+===================================
+
+-----------------------------------
+Coding : menerjemahkan perintah program ke bahasa yg dapat dipahami oleh komputer
+Syntax : pola-pola aturan/struktur yg mengatur penggunaan kata dan simbol untuk memberi perintah atau menulis kode program, dalam software aplikasi atau bahasa pemrograman tertentu
+Query : instruksi dan prosedur yang digunakan untuk mengambil data dari database
+-------------------------------------
+
+CREATE DATABASE mahasiswa;
+SHOW DATABASES;
+USE mahasiswa;
+DROP DATABASE mahasiswa;
+
+CREATE TABLE data_mahasiswa ( nim char(9), nama char(50), 
+umur int, tempat_lahir char(50), jurusan char (30) );
+SHOW TABLES;
+DROP TABLE data_mahasiswa;
+
+ALTER TABLE daftar_jurusan MODIFY jumlah_mahasiswa MEDIUMINT;
+ALTER TABLE daftar_jurusan CHANGE alamat alamat_jurusan VARCHAR(100);
+ALTER TABLE daftar_jurusan RENAME TO tabel_jurusan;
+RENAME TABLE tabel_jurusan TO daftar_jurusan;
+ALTER TABLE daftar_jurusan ADD ketua_jurusan VARCHAR(50);
+ALTER TABLE daftar_jurusan DROP ketua_jurusan;
+SHOW TABLE STATUS WHERE NAME='daftar_jurusan' \G;
+SHOW TABLE STATUS WHERE NAME='daftar_jurusan' \G;
+
+INSERT INTO mata_kuliah VALUES ('KIMDA','Kimia Dasar',2,' Kimia');
+
