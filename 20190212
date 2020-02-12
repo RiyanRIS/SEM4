@@ -26,7 +26,7 @@ SELECT * FROM data_mahasiswa;
 UPDATE PRODI SET AKREDITASI='B'
 DELETE FROM data_mahasiswa WHERE kode_mahasiswa = 4
 
-*Referensi bahasa indo di`DuniaIlkom
+*Referensi bahasa indo di `DuniaIlkom
 <https://www.duniailkom.com/tutorial-mysql-menambahkan-data-ke-dalam-tabel-inser/>`_.*
 
 ---------------------------------
